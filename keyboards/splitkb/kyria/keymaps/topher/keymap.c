@@ -5,7 +5,6 @@ enum layers {
     _LOW,
     _LOWER,
     _LOWEST,
-    _MOUSE,
 };
 enum tophactyl_keycodes {
     QW = SAFE_RANGE,
@@ -41,77 +40,38 @@ enum tap_dance_keycodes {
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_QWERTY] = LAYOUT(
-    TD(Q_TAB), KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, TD(P_PSCR), 
-    LGUI_T(KC_A), KC_S, KC_D, RCTL_T(KC_F), KC_G, TD(H_LEFT), TD(J_DOWN), TD(K_UP),TD(L_RGHT), KC_BSPC,
-    RALT_T(KC_Z), KC_X, KC_C, KC_V, LSFT_T(KC_B), KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, 
-    LOWER, LSFT_T(KC_ENT), _______, KC_INS, LCTL_T(KC_SPC), LOW
+    XXXXXXX, TD(Q_TAB), KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, TD(P_PSCR), XXXXXXX,
+    XXXXXXX, LGUI_T(KC_A), KC_S, KC_D, RCTL_T(KC_F), KC_G, TD(H_LEFT), TD(J_DOWN), TD(K_UP),TD(L_RGHT), KC_BSPC, XXXXXXX,
+    XXXXXXX, RALT_T(KC_Z), KC_X, KC_C, KC_V, LSFT_T(KC_B), XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, XXXXXXX, 
+    XXXXXXX,  XXXXXXX,  LOWER, LSFT_T(KC_ENT), _______, KC_INS, LCTL_T(KC_SPC), LOW, XXXXXXX,  XXXXXXX 
+    // QK_BOOT, QK_BOOT, QK_BOOT, QK_BOOT, QK_BOOT, QK_BOOT
     ),
 
     [_LOW] = LAYOUT(
-    TD(_1_WS1), TD(_2_WS2), TD(_3_WS3), KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, 
-    QW, _______, KC_LCBR, KC_RCBR, KC_COLN, KC_GRV, KC_MINS, KC_PLUS, KC_PIPE, KC_DEL,
-    _______, _______, XCOPY, XPASTE, _______, _______, KC_QUOT, _______, _______, KC_BSLS,
-    _______, _______, _______, _______, _______, _______ 
+    XXXXXXX, TD(_1_WS1), TD(_2_WS2), TD(_3_WS3), KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, XXXXXXX, 
+    XXXXXXX, QW, _______, KC_LCBR, KC_RCBR, KC_COLN, KC_GRV, KC_MINS, KC_PLUS, KC_PIPE, KC_DEL, XXXXXXX, 
+    XXXXXXX, _______, _______, XCOPY, XPASTE, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, _______, KC_QUOT, _______, _______, KC_BSLS, XXXXXXX, 
+    XXXXXXX,  XXXXXXX,  _______, _______, _______, _______, _______, _______, XXXXXXX,  XXXXXXX  
     ),
 
     [_LOWER] = LAYOUT(
-    TD(EXLM_MWS1), TD(AT_MWS3), TD(HASH_MWS3), KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, 
-    KC_ESC, _______, KC_LBRC, KC_RBRC, KC_SCLN, _______, KC_UNDS, KC_EQL, _______, _______, 
-    _______, _______, _______, _______, _______, TabLeft, KC_PGDN, KC_PGUP, TabRight, _______, 
-    _______, _______, _______, _______, _______, _______ 
+    XXXXXXX, TD(EXLM_MWS1), TD(AT_MWS3), TD(HASH_MWS3), KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, XXXXXXX, 
+    XXXXXXX, KC_ESC, _______, KC_LBRC, KC_RBRC, KC_SCLN, _______, KC_UNDS, KC_EQL, _______, _______, XXXXXXX, 
+    XXXXXXX, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, TabLeft, KC_PGDN, KC_PGUP, TabRight, _______, XXXXXXX, 
+    XXXXXXX,  XXXXXXX,  _______, _______, _______, _______, _______, _______, XXXXXXX,  XXXXXXX 
     ),
 
     [_LOWEST] = LAYOUT(
-    KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, 
-    KC_F11, KC_F12, TTY1, TTY2, TTY3, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, _______, 
-    _______, _______, _______, _______, _______, STabLeft, _______, _______, STabRight, _______, 
-    _______, QK_RBT, QK_BOOT, _______, _______, _______ 
+    XXXXXXX, KC_F1, KC_F2, KC_F3, KC_F4, KC_F5, KC_F6, KC_F7, KC_F8, KC_F9, KC_F10, XXXXXXX, 
+    XXXXXXX, KC_F11, KC_F12, TTY1, TTY2, TTY3, KC_LEFT, KC_DOWN, KC_UP, KC_RGHT, _______, XXXXXXX, 
+    XXXXXXX, _______, _______, _______, _______, _______, XXXXXXX, XXXXXXX, XXXXXXX, XXXXXXX, STabLeft, _______, _______, STabRight, _______, XXXXXXX, 
+    XXXXXXX,  XXXXXXX,  _______, QK_RBT, QK_BOOT, _______, _______, _______, XXXXXXX,  XXXXXXX 
     ),
 
-    [_MOUSE] = LAYOUT(
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
-    _______, _______, _______, _______, _______, _______, KC_BTN1, KC_BTN2, _______, _______, 
-    _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
-    _______, _______, _______, _______, _______, _______ 
-    ),
 };
 
 layer_state_t layer_state_set_user(layer_state_t state) {
-    switch(get_highest_layer(remove_auto_mouse_layer(state, true))) {
-        case _LOW:
-        case _LOWER:
-            state = remove_auto_mouse_layer(state, false);
-            set_auto_mouse_enable(false);
-            break;
-        default:
-            set_auto_mouse_enable(true);
-            break;
-        
-        return state;
-    }
-    return update_tri_layer_state(state, _LOW, _LOWER, _LOWEST);
-}
-
-
-// layer_state_t layer_state_set_user(layer_state_t state) {
-//     switch(get_highest_layer(state)) {
-//         case _LOW:
-//         case _LOWER:
-//             auto_mouse_trigger_reset(true);
-//             break;
-//     }
-//     return state;
-// }
-
-void pointing_device_init_user(void) {
-    set_auto_mouse_layer(_MOUSE);
-    set_auto_mouse_enable(true);
-}
-
-void pointing_device_init_kb(void) { 
-#ifdef PMW33XX_CPI     
-    pointing_device_set_cpi(PMW33XX_CPI); 
-#endif 
+  return update_tri_layer_state(state, _LOW, _LOWER, _LOWEST);
 }
 
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
@@ -135,16 +95,6 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
             return TAPPING_TERM;
     }
 }
-
-#if defined(ENCODER_MAP_ENABLE)
-const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [_QWERTY] = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
-    [_LOW] = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
-    [_LOWER] = { ENCODER_CCW_CW(STabRight, STabLeft) },
-    [_LOWEST] = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
-    [_MOUSE] = { ENCODER_CCW_CW(KC_WH_U, KC_WH_D) },
-};
-#endif
 
 void dance_1_ws1_finished(tap_dance_state_t *state, void *user_data){
     if (state->count == 1) {
