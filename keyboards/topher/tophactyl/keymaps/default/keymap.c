@@ -15,19 +15,12 @@ enum tophactyl_keycodes {
 
 enum tap_dance_keycodes {
     Q_TAB,
-    Z_CAP,
     M_QUOT,
     H_LEFT,
     J_DOWN,
     K_UP,
     L_RGHT,
     P_PSCR,
-    _1_WS1,
-    _2_WS2,
-    _3_WS3,
-    EXLM_MWS1,
-    AT_MWS3,
-    HASH_MWS3,
     BTN1_BTN2,
 };
 
@@ -45,14 +38,14 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_LOW] = LAYOUT(
-    TD(_1_WS1), TD(_2_WS2), TD(_3_WS3), KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, 
+    KC_1, KC_2, KC_3, KC_4, KC_5, KC_6, KC_7, KC_8, KC_9, KC_0, 
     QW, _______, KC_LCBR, KC_RCBR, KC_COLN, KC_GRV, KC_MINS, KC_PLUS, KC_PIPE, KC_DEL,
     _______, _______, _______, _______, _______, _______, KC_QUOT, _______, _______, KC_BSLS,
     _______, _______, _______, GAME, _______, _______ 
     ),
 
     [_LOWER] = LAYOUT(
-    TD(EXLM_MWS1), TD(AT_MWS3), TD(HASH_MWS3), KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, 
+    KC_EXLM, KC_AT, KC_HASH, KC_DLR, KC_PERC, KC_CIRC, KC_AMPR, KC_ASTR, KC_LPRN, KC_RPRN, 
     KC_ESC, _______, KC_LBRC, KC_RBRC, KC_SCLN, _______, KC_UNDS, KC_EQL, _______, _______, 
     _______, _______, _______, _______, _______, _______, KC_PGDN, KC_PGUP, _______, _______, 
     _______, _______, _______, _______, _______, _______ 
@@ -114,14 +107,9 @@ uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
         case TD(K_UP): return 160;
         case TD(L_RGHT): return 115;
         case TD(M_QUOT): return 140;
-        case TD(Z_CAP): return 190;
         case TD(Q_TAB): return 210;
         case TD(P_PSCR): return 130;
-        case TD(_1_WS1): return 160;
-        case TD(_2_WS2): return 160;
-        case TD(_3_WS3): return 160;
         case LGUI_T(KC_A): return 300;  
-        case LCTL_T(_______): return 210;
         case LSFT_T(KC_ENT): return 150;
         case LALT(KC_SPC): return 210;
         default:
@@ -140,76 +128,8 @@ const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
 };
 #endif
 
-void dance_1_ws1_finished(tap_dance_state_t *state, void *user_data){
-    if (state->count == 1) {
-        tap_code(KC_1);
-    }
-    else {
-        register_code(KC_LGUI);
-        tap_code(KC_1);
-        unregister_code(KC_LGUI);
-    }
-}
-void dance_2_ws2_finished(tap_dance_state_t *state, void *user_data){
-    if (state->count == 1) {
-        tap_code(KC_2);
-    }
-    else {
-        register_code(KC_LGUI);
-        tap_code(KC_2);
-        unregister_code(KC_LGUI);
-    }
-}
-void dance_3_ws3_finished(tap_dance_state_t *state, void *user_data){
-    if (state->count == 1) {
-        tap_code(KC_3);
-    }
-    else {
-        register_code(KC_LGUI);
-        tap_code(KC_3);
-        unregister_code(KC_LGUI);
-    }
-}
-void dance_exlm_mws1_finished(tap_dance_state_t *state, void *user_data){
-    if (state->count == 1) {
-        tap_code16(KC_EXLM);
-    }
-    else {
-        register_code(KC_LSFT);
-        register_code(KC_LGUI);
-        tap_code(KC_1);
-        unregister_code(KC_LSFT);
-        unregister_code(KC_LGUI);
-    }
-}
-void dance_at_mws2_finished(tap_dance_state_t *state, void *user_data){
-    if (state->count == 1) {
-        tap_code16(KC_AT);
-    }
-    else {
-        register_code(KC_LSFT);
-        register_code(KC_LGUI);
-        tap_code(KC_2);
-        unregister_code(KC_LSFT);
-        unregister_code(KC_LGUI);
-    }
-}
-void dance_hash_mws3_finished(tap_dance_state_t *state, void *user_data){
-    if (state->count == 1) {
-        tap_code16(KC_HASH);
-    }
-    else {
-        register_code(KC_LSFT);
-        register_code(KC_LGUI);
-        tap_code(KC_3);
-        unregister_code(KC_LSFT);
-        unregister_code(KC_LGUI);
-    }
-}
-
 tap_dance_action_t tap_dance_actions[] = {
     [Q_TAB] = ACTION_TAP_DANCE_DOUBLE(KC_Q, KC_TAB),
-    [Z_CAP] = ACTION_TAP_DANCE_DOUBLE(KC_Z, KC_CAPS),
     [H_LEFT] = ACTION_TAP_DANCE_DOUBLE(KC_H, KC_LEFT),
     [J_DOWN] = ACTION_TAP_DANCE_DOUBLE(KC_J, KC_DOWN),
     [K_UP] = ACTION_TAP_DANCE_DOUBLE(KC_K, KC_UP),
@@ -217,12 +137,6 @@ tap_dance_action_t tap_dance_actions[] = {
     [M_QUOT] = ACTION_TAP_DANCE_DOUBLE(KC_M, KC_QUOT),
     [P_PSCR] = ACTION_TAP_DANCE_DOUBLE(KC_P, KC_PSCR),
     [BTN1_BTN2] = ACTION_TAP_DANCE_DOUBLE(KC_BTN1, KC_BTN2),
-    [_1_WS1] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_1_ws1_finished, NULL),
-    [_2_WS2] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_2_ws2_finished, NULL),
-    [_3_WS3] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_3_ws3_finished, NULL),
-    [EXLM_MWS1] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_exlm_mws1_finished, NULL),
-    [AT_MWS3] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_at_mws2_finished, NULL),
-    [HASH_MWS3] = ACTION_TAP_DANCE_FN_ADVANCED (NULL, dance_hash_mws3_finished, NULL)
 };
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
