@@ -4,15 +4,6 @@
     "url": "",
     "maintainer": "topher",
     "usb": {
-<<<<<<< Updated upstream
-        "vid": "0x1234",
-        "pid": "0x5678",
-        "device_version": "0.0.1"
-    },
-    "matrix_pins": {
-        "cols": ["A0", "A1", "A2", "A3", "A4", "A5", "A6", "A7", "A8", "A9"],
-        "rows": ["B0", "B1", "B2", "B3"]
-=======
         "vid": "0xFEED",
         "pid": "0x0000",
         "device_version": "1.0.0"
@@ -20,16 +11,11 @@
     "matrix_pins": {
         "cols": ["B2", "B1", "A1", "B4", "B5", "A6", "A7", "A0", "B10", "B0", "B11", "B12"],
         "rows": ["B8", "B3", "A15", "A8"]
->>>>>>> Stashed changes
     },
     "diode_direction": "COL2ROW",
     "processor": "STM32F303",
     "bootloader": "stm32-dfu",
     "board": "QMK_PROTON_C",
-<<<<<<< Updated upstream
-    "layouts": {
-        "LAYOUT": {
-=======
     "features": {
         "bootmagic": true,
         "command": false,
@@ -40,7 +26,6 @@
     },
     "layouts": {
         "LAYOUT_ortho_4x12": {
->>>>>>> Stashed changes
             "layout": [
                 {"matrix": [0, 0], "x": 0, "y": 0},
                 {"matrix": [0, 1], "x": 1, "y": 0},
@@ -52,12 +37,8 @@
                 {"matrix": [0, 7], "x": 7, "y": 0},
                 {"matrix": [0, 8], "x": 8, "y": 0},
                 {"matrix": [0, 9], "x": 9, "y": 0},
-<<<<<<< Updated upstream
-
-=======
                 {"matrix": [0, 10], "x": 10, "y": 0},
                 {"matrix": [0, 11], "x": 11, "y": 0},
->>>>>>> Stashed changes
                 {"matrix": [1, 0], "x": 0, "y": 1},
                 {"matrix": [1, 1], "x": 1, "y": 1},
                 {"matrix": [1, 2], "x": 2, "y": 1},
@@ -68,12 +49,8 @@
                 {"matrix": [1, 7], "x": 7, "y": 1},
                 {"matrix": [1, 8], "x": 8, "y": 1},
                 {"matrix": [1, 9], "x": 9, "y": 1},
-<<<<<<< Updated upstream
-
-=======
                 {"matrix": [1, 10], "x": 10, "y": 1},
                 {"matrix": [1, 11], "x": 11, "y": 1},
->>>>>>> Stashed changes
                 {"matrix": [2, 0], "x": 0, "y": 2},
                 {"matrix": [2, 1], "x": 1, "y": 2},
                 {"matrix": [2, 2], "x": 2, "y": 2},
@@ -84,20 +61,13 @@
                 {"matrix": [2, 7], "x": 7, "y": 2},
                 {"matrix": [2, 8], "x": 8, "y": 2},
                 {"matrix": [2, 9], "x": 9, "y": 2},
-<<<<<<< Updated upstream
-
-=======
                 {"matrix": [2, 10], "x": 10, "y": 2},
                 {"matrix": [2, 11], "x": 11, "y": 2},
->>>>>>> Stashed changes
                 {"matrix": [3, 0], "x": 0, "y": 3},
                 {"matrix": [3, 1], "x": 1, "y": 3},
                 {"matrix": [3, 2], "x": 2, "y": 3},
                 {"matrix": [3, 3], "x": 3, "y": 3},
                 {"matrix": [3, 4], "x": 4, "y": 3},
-<<<<<<< Updated upstream
-                {"matrix": [3, 5], "x": 5, "y": 3}
-=======
                 {"matrix": [3, 5], "x": 5, "y": 3},
                 {"matrix": [3, 6], "x": 6, "y": 3},
                 {"matrix": [3, 7], "x": 7, "y": 3},
@@ -105,7 +75,6 @@
                 {"matrix": [3, 9], "x": 9, "y": 3},
                 {"matrix": [3, 10], "x": 10, "y": 3},
                 {"matrix": [3, 11], "x": 11, "y": 3}
->>>>>>> Stashed changes
             ]
         }
     }
